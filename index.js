@@ -10,6 +10,8 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(cors());
 
@@ -52,6 +54,6 @@ app.post("/chat", (req, res) => {
   //console.log({ question });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is listening on port 3000");
 });
